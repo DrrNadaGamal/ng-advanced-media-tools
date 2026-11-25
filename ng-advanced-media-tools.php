@@ -70,7 +70,7 @@ final class NGAMT {
 	static function haystack() {
 		global $wpdb;
 		$parts = $wpdb->get_col( "SELECT post_content FROM {$wpdb->posts} WHERE post_type NOT IN ('attachment','revision') AND post_status NOT IN ('trash','auto-draft')" );
-		$parts = array_merge( $parts, $wpdb->get_col( "SELECT meta_value FROM {$wpdb->postmeta} WHERE meta_key NOT IN ('_wp_attached_file','_wp_attachment_metadata','_ngamt_source','_ngamt_q') AND LENGTH(meta_value)>8" ) );
+		$parts = array_merge( $parts, $wpdb->get_col( "SELECT meta_value FROM {$wpdb->postmeta} WHERE meta_key NOT IN ('_wp_attached_file','_wp_attachment_metadata','_ngamt_source','_ngamt_q','_nglio','_ngco','_ngama','_wp_attachment_backup_sizes','_wp_old_slug') AND LENGTH(meta_value)>8" ) );
 		$parts = array_merge( $parts, $wpdb->get_col( "SELECT option_value FROM {$wpdb->options} WHERE option_name NOT LIKE '\_transient%' AND option_name NOT LIKE '\_site\_transient%' AND LENGTH(option_value)>8" ) );
 		return implode( "\n", $parts );
 	}

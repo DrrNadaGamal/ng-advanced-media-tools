@@ -16,4 +16,4 @@ Scans posts and pages (not trashed ones), all post meta (page builders such as E
 ## Honest limits
 - Detection is text matching: an image referenced only by code, a theme file, or a plugin table is not seen and could be listed as unused. Always review the list and use quarantine first.
 - The hostname check resolves DNS once; a hostile DNS that changes answers between the check and the download is not covered beyond WordPress's own request protections.
-- Not tested with Elementor/Bricks pages in a real editor, or on a live host. FR/DE labels are machine translations.
+- Smoke-tested with real Elementor 4.4.2 (image widget stored in builder data is recognised as used). Not tested in the Elementor editor UI, with Bricks, or on a live host. FR/DE labels are machine translations.
